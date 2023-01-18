@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  validate-peer0:
+    image: hyperledger/fabric-peer
+    ports:
+      - "30304:30304"
+    environment:
+      - CORE_PEER_ID=vp0
+      - CORE_PEER_ADDRESSAUTODETECT=true
+      - CORE_VM_ENDPOINT=http://172.17.0.1:2375
+      - CORE_LOGGING_LEVEL=DEBUG
+    command: peer node start
+  validate-peer1:
+    extends:
+      service: validate-peer0
+    environment:
+      - CORE_PEER_ID=validate-peer1
+      - CORE_PEER_DISCOVERY_ROOTNODE=validate-peer0:30303
+    links:
+      - validate-peer0
+  client:
+    image: xester-client
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: xester-client
+    ports:
+      - 50:5000
