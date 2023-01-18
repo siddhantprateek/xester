@@ -1,0 +1,6 @@
+
+
+peer:
+  validator:
+    consensus: pbft
+  id: vp0

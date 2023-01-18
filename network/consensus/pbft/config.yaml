@@ -1,0 +1,24 @@
+
+
+general:
+
+  mode: batch
+
+  # Maximum number of validators/replicas in the network
+  "N": 4
+  
+  # How many requests should the primary send per pre-prepare when in "batch" mode
+  batchsize: 500
+  
+  # Timeout
+  timeout:
+  
+    # Send a pre-prepare if there are pending requests, batchsize isn't reached yet,
+    # and this much time has elapsed since the current batch was formed
+    batch: 1s
+  
+    # How long may a request take between reception and execution, must be greater than the batch timeout 
+    request: 2s 
+  
+    # How long may a view change take
+    viewchange: 2s 
