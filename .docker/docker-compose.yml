@@ -22,7 +22,7 @@ services:
   client:
     image: xester-client
     build: 
-      context: ./client
+      context: ../../client
       dockerfile: Dockerfile
     container_name: xester-client
     ports:
