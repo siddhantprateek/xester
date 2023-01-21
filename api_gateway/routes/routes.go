@@ -10,6 +10,6 @@ func AppRoute() {
 		return c.SendString("Server is running")
 	})
 
-	app.Listen(":4000")
+	app.Listen(":8080")
 
 }

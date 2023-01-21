@@ -10,7 +10,20 @@
 
 ### Features
 
-### Setting up dev-environment
+## Setting up dev-environment
 
+- Fork the repository [siddhantprateek/xester](https://github.com/siddhantprateek/xester)
+
+- ```shell
+    git clone https://github.com/<username>/xester
+    cd xester
+    ```
+- Install Go/Golang 1.17 and above [go.dev](https://go.dev/)
+
+- ```javascript
+    cd api_gateway
+    go get .
+    go run cmd/main.go
+    ```
 ### Author
 - [Siddhant Prateek Mahanayak](https://github.com/siddhantprateek)
