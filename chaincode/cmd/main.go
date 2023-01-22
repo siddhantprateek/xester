@@ -10,7 +10,7 @@ import (
 func main() {
 
 	// logger.SetLevel(shim.LogInfo)
-	err := shim.Start(new(chaincode.AppChaincode))
+	err := shim.Start(new(chaincode.REState))
 	if err != nil {
 		fmt.Println("Error starting Chaincode", err.Error())
 	}
